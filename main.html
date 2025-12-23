@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informatica - Istituto Enrico Fermi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/presentation.css">
+    <link rel="icon" type="image/x-icon" href="img/logofermi.png">
+</head>
+
+<body>
+    <!-- Inline script to apply theme immediately and prevent flash -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('baseTheme') || 'dark'; // Default to dark
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        })();
+    </script>
+
+    <!-- Loader iniziale -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-logo-container">
+                <div class="loader-logo">🖥️</div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring-2"></div>
+            </div>
+            <div class="loader-text-container">
+                <div class="loader-title">Informatica Fermi</div>
+                <div class="loader-subtitle">Preparando l'esperienza...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sfondo animato -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">🖥️ Informatica Fermi</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Corsi</a></li>
+                <li><a href="#projects">Progetti</a></li>
+                <li><a href="#features">Perché Noi</a></li>
+                <li><a href="#contact">Contatti</a></li>
+            </ul>
+            <button class="theme-toggle" id="header-theme-toggle" onclick="toggleBaseTheme()" title="Cambia tema">
+                <span class="theme-icon">☀️</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Benvenuti all'Open Day 2025-26</h1>
+            <p>Scopri il mondo dell'informatica all'Istituto Enrico Fermi. Programma, crea, innova!</p>
+            <a href="#courses" class="cta-button">Esplora i Corsi</a>
+        </div>
+    </section>
+
+    <!-- Sezione Corsi -->
+    <section class="courses" id="courses">
+        <h2 class="section-title">I Nostri Corsi</h2>
+        <div class="courses-grid">
+            <!-- Corso Informatica -->
+            <div class="course-card">
+                <div class="course-icon">💻</div>
+                <h3 class="course-title">Informatica</h3>
+                <p class="course-description">Impara a programmare e sviluppare software con algoritmi e strutture dati
+                </p>
+                <div class="course-details-text" style="display: none;">Il corso di Informatica si concentra sullo
+                    sviluppo software a 360 gradi. Dalla logica di programmazione con C, C++ e Java, la gestione di
+                    database, fino allo sviluppo web.</div>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <span class="topic-icon">💥</span>
+                        <div class="topic-text">C/C++</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">☕</span>
+                        <div class="topic-text">Java</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">🗃️</span>
+                        <div class="topic-text">Database</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">⚡</span>
+                        <div class="topic-text">Algoritmi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corso Sistemi e Reti -->
+            <div class="course-card">
+                <div class="course-icon">🌐</div>
+                <h3 class="course-title">Sistemi e Reti</h3>
+                <p class="course-description">Gestisci e configura sistemi informatici e infrastrutture di rete </p>
+                <div class="course-details-text" style="display: none;">Impara a progettare, configurare e gestire
+                    infrastrutture di rete complesse. Dalla CPU fino alla sicurezza informatica, diventerai
+                    l'architetto delle connessioni globali.</div>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <span class="topic-icon">🏗️</span>
+                        <div class="topic-text">CPU</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">🔗</span>
+                        <div class="topic-text">TCP/IP</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">🔐</span>
+                        <div class="topic-text">Sicurezza</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">☁️</span>
+                        <div class="topic-text">Cloud</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corso TPSIT -->
+            <div class="course-card">
+                <div class="course-icon">📡</div>
+                <h3 class="course-title">TPSIT</h3>
+                <p class="course-description">Tecnologie e Progettazione di Sistemi Informatici e di Telecomunicazioni
+                </p>
+                <div class="course-details-text" style="display: none;">Il ponte tra hardware e software. Impara a
+                    progettare sistemi integrati, sistemi comunicanti e app mobile.</div>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <span class="topic-icon">⚡</span>
+                        <div class="topic-text">Multithreading</div>
+
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">📱</span>
+                        <div class="topic-text">App Mobile</div>
+
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">🏠</span>
+                        <div class="topic-text">IoT</div>
+
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">🔄</span>
+                        <div class="topic-text">API REST</div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Corso Telecomunicazioni -->
+            <div class="course-card">
+                <div class="course-icon">📶</div>
+                <h3 class="course-title">Telecomunicazioni</h3>
+                <p class="course-description">Le tecniche di comunicazione e trasmissione dati a distanza</p>
+                <div class="course-details-text" style="display: none;">Scopri come viaggiano le informazioni. Dalle
+                    onde radio ai satelliti, dalla fibra ottica al 5G, studia le tecnologie che connettono il mondo.
+                </div>
+                <div class="topics-grid">
+                    <div class="topic-card">
+                        <span class="topic-icon">📊</span>
+                        <div class="topic-text">Segnali</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">📡</span>
+                        <div class="topic-text">Reti TLC</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">📻</span>
+                        <div class="topic-text">Radio</div>
+                    </div>
+                    <div class="topic-card">
+                        <span class="topic-icon">🛰️</span>
+                        <div class="topic-text">Satelliti</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Projects Section -->
+    <section class="courses" id="projects">
+        <h2 class="section-title">Progetti degli Studenti</h2>
+        <div class="projects-showcase">
+            <a href="https://drive.google.com/drive/folders/1k8z78765sQtUa2RylLCdHv9gfmPwM_Pi?usp=drive_link"
+                class="no_underline">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img class="project-image" src="img/scratch-cat-logo.png" alt="Scratch">
+                    </div>
+                    <div class="project-info">
+                        <h3>Scratch</h3>
+                        <p>Introduzione alla programmazione - Giochi</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Scratch</span>
+                            <span class="tech-tag">Videogame</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/16LlQxVR9myzDiv2e_gZj-sg39zhZyTJW?usp=drive_link"
+                class="no_underline">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img class="project-image" src="img/javascript.png" alt="JS">
+                    </div>
+                    <div class="project-info">
+                        <h3>Applicazioni web</h3>
+                        <p>Esempi di pagine e applicazioni web - WebDev</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/drive/folders/1wNJHsUjdzoVUr-0mOGFPG-nW38gLwS6w?usp=drive_link"
+                class="no_underline">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img class="project-image" src="img/ISO_C++_Logo.svg.png" alt="C++">
+                    </div>
+                    <div class="project-info">
+                        <h3>Programmazione C/C++/Java</h3>
+                        <p>Esempi di app Desktop e Mobile - AppDev</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Java</span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+
+    <!-- Features Section -->
+    <section class="courses" id="features">
+        <h2 class="section-title">Perché Scegliere Noi?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Tecnologie "Decenti"</h3>
+                <p>Laboratori equipaggiati</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">👨‍🏫</div>
+                <h3>Docenti Esperti</h3>
+                <p>Professori qualificati e professionisti del settore</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <h3>Stage Aziendali</h3>
+                <p>Collaborazioni con le aziende della provincia</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">☕​</div>
+                <h3>Il Bar</h3>
+                <p>La scuola ha un Bar</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="heroEnd" id="end">
+        <div class="heroEnd-content">
+            <h1 class="glitchEnd" data-text="Apri i DevTools">Apri i DevTools</h1>
+            <p>Apri i DevTools scrivendo "fermi" e inizia a modificare questo sito!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <h3>Istituto Superiore Enrico Fermi</h3>
+        <p>📍 Strada Spolverina 5, 46100 Mantova | 📞 0376 262675 | ✉️ mnis01100e@istruzione.it</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">Made by: Sagalpartap Singh</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">© 2025 Istituto Enrico Fermi - Tutti i diritti riservati</p>
+    </footer>
+
+    <script src="js/config.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/themes.js"></script>
+    <script src="js/courses.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/hacker-mode.js"></script>
+    <script src="js/presentation.js"></script>
+    <script src="js/secret-sequence.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

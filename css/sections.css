@@ -1,0 +1,285 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 8rem;
+    position: relative;
+    margin-top: 60px;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 8s ease infinite;
+    line-height: 1.1;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    animation: fadeIn 1.5s ease-out 0.5s both;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* DevTools End Hero - Hidden initially by default */
+.heroEnd {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    position: relative;
+    margin-top: 0;
+}
+
+.heroEnd-content {
+    text-align: center;
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.heroEnd h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+    background-size: 200% 200%;
+}
+
+.heroEnd p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: var(--text-muted);
+    animation: fadeIn 1.5s ease-out 0.5s both;
+}
+
+/* Glitch effect - kept for DevTools mode */
+.glitchEnd {
+    position: relative;
+    display: inline-block;
+}
+
+.glitchEnd::before,
+.glitchEnd::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.glitchEnd::before {
+    animation: glitchEnd-1 0.5s infinite linear alternate-reverse;
+    color: #ff0000;
+    z-index: -1;
+}
+
+.glitchEnd::after {
+    animation: glitchEnd-2 0.5s infinite linear alternate-reverse;
+    color: #00ff00;
+    z-index: -2;
+}
+
+@keyframes glitchEnd-1 {
+    0% {
+        clip: rect(64px, 9999px, 66px, 0);
+        transform: skew(0.5deg);
+    }
+
+    20% {
+        clip: rect(30px, 9999px, 36px, 0);
+        transform: skew(0.1deg);
+    }
+
+    40% {
+        clip: rect(70px, 9999px, 71px, 0);
+        transform: skew(0.2deg);
+    }
+
+    60% {
+        clip: rect(10px, 9999px, 15px, 0);
+        transform: skew(0.3deg);
+    }
+
+    80% {
+        clip: rect(40px, 9999px, 44px, 0);
+        transform: skew(0.4deg);
+    }
+
+    100% {
+        clip: rect(12px, 9999px, 18px, 0);
+        transform: skew(0.5deg);
+    }
+}
+
+@keyframes glitchEnd-2 {
+    0% {
+        clip: rect(65px, 9999px, 69px, 0);
+        transform: skew(0.8deg);
+    }
+
+    20% {
+        clip: rect(25px, 9999px, 32px, 0);
+        transform: skew(0.9deg);
+    }
+
+    40% {
+        clip: rect(75px, 9999px, 76px, 0);
+        transform: skew(0.7deg);
+    }
+
+    60% {
+        clip: rect(8px, 9999px, 13px, 0);
+        transform: skew(0.6deg);
+    }
+
+    80% {
+        clip: rect(38px, 9999px, 41px, 0);
+        transform: skew(0.8deg);
+    }
+
+    100% {
+        clip: rect(10px, 9999px, 16px, 0);
+        transform: skew(0.8deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+.courses {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 4rem;
+    color: var(--text-light);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+.courses-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-auto-rows: 1fr;
+}
+
+@media (min-width: 1200px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .courses-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+    }
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.projects-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}

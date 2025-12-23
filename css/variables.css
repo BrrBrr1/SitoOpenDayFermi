@@ -1,0 +1,48 @@
+/* VARIABILI GLOBALI - SISTEMA TEMA LIGHT/DARK */
+:root {
+    /* Colori base - Light Theme (default) */
+    --primary-color: #2563eb;
+    /* Blu affidabile */
+    --secondary-color: #0891b2;
+    /* Teal moderno */
+    --accent-color: #f59e0b;
+    /* Ambra energetico */
+    --dark-bg: #f8fafc;
+    /* Sfondo chiaro */
+    --card-bg: #ffffff;
+    /* Carte bianche */
+    --text-light: #1e293b;
+    /* Testo scuro per leggibilità */
+    --text-muted: #64748b;
+    /* Testo secondario */
+    --glow-intensity: 0 0 20px;
+    /* Bagliore più morbido */
+    --border-color: #e2e8f0;
+    /* Bordi sottili */
+    --header-bg: rgba(255, 255, 255, 0.95);
+    /* Header trasparente */
+    --footer-bg: #ffffff;
+    /* Footer */
+
+    transition:
+        --primary-color 0.4s ease,
+        --secondary-color 0.4s ease,
+        --accent-color 0.4s ease,
+        --dark-bg 0.4s ease,
+        --card-bg 0.4s ease,
+        --text-light 0.4s ease,
+        --border-color 0.4s ease,
+        --header-bg 0.4s ease,
+        --footer-bg 0.4s ease;
+}
+
+/* Dark Theme - applicato via classe body.dark-theme */
+body.dark-theme {
+    --dark-bg: #0f172a;
+    --card-bg: #1e293b;
+    --text-light: #e2e8f0;
+    --text-muted: #94a3b8;
+    --border-color: rgba(148, 163, 184, 0.2);
+    --header-bg: rgba(15, 23, 42, 0.95);
+    --footer-bg: #1e293b;
+}
