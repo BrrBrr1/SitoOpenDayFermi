@@ -24,6 +24,7 @@
     right: -300px;
     border-radius: 50%;
     animation: floatPresentation 20s ease-in-out infinite;
+    pointer-events: none;
 }
 
 .presentation-overlay::after {
@@ -36,6 +37,7 @@
     left: -200px;
     border-radius: 50%;
     animation: floatPresentation 25s ease-in-out infinite reverse;
+    pointer-events: none;
 }
 
 @keyframes presentationFadeIn {
@@ -76,6 +78,7 @@
     overflow: hidden;
     padding: 1rem;
     gap: 1rem;
+    user-select: text;
 }
 
 .presentation-slide.exit-left {
