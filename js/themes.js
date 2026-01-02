@@ -17,6 +17,34 @@ function setBaseTheme(theme) {
         document.body.classList.remove('dark-theme');
     }
 
+    // Also reset any custom decorative theme to avoid visual conflicts
+    currentTheme = 'default';
+    document.documentElement.style.setProperty('--primary-color', '#2563eb');
+    document.documentElement.style.setProperty('--secondary-color', '#0891b2');
+    document.documentElement.style.setProperty('--accent-color', '#f59e0b');
+
+    // Reset background colors based on new theme
+    if (theme === 'dark') {
+        document.documentElement.style.setProperty('--dark-bg', '#0f172a');
+        document.documentElement.style.setProperty('--card-bg', '#1e293b');
+    } else {
+        document.documentElement.style.setProperty('--dark-bg', '#f8fafc');
+        document.documentElement.style.setProperty('--card-bg', '#ffffff');
+    }
+
+    // Force refresh bgAnimation to clear any custom theme residue
+    const bgAnimation = document.getElementById('bgAnimation');
+    if (bgAnimation) {
+        bgAnimation.classList.remove('theme-foresta', 'theme-tramonto',
+            'theme-cyberpunk', 'theme-neon', 'theme-ghiaccio', 'theme-toxic');
+
+        // Clone and replace to force pseudo-element refresh
+        const parent = bgAnimation.parentNode;
+        const clone = bgAnimation.cloneNode(true);
+        parent.removeChild(bgAnimation);
+        parent.insertBefore(clone, parent.firstChild);
+    }
+
     // Save preference
     localStorage.setItem('baseTheme', theme);
 
@@ -202,11 +230,18 @@ function resetToDefaultTheme() {
     document.documentElement.style.setProperty('--secondary-color', '#0891b2');
     document.documentElement.style.setProperty('--accent-color', '#f59e0b');
 
-    // Remove decorative theme classes
+    // Remove decorative theme classes and force refresh
     const bgAnimation = document.getElementById('bgAnimation');
     if (bgAnimation) {
+        // Remove all theme classes
         bgAnimation.classList.remove('theme-foresta', 'theme-tramonto',
             'theme-cyberpunk', 'theme-neon', 'theme-ghiaccio', 'theme-toxic');
+
+        // Force DOM refresh to clear pseudo-element styles
+        const parent = bgAnimation.parentNode;
+        const clone = bgAnimation.cloneNode(true);
+        parent.removeChild(bgAnimation);
+        parent.insertBefore(clone, parent.firstChild);
     }
 
     // Restore base theme colors

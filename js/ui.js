@@ -147,12 +147,12 @@ function createCommandPalette() {
             <div class="cmd-section">
                 <h4>🎨 Temi Decorativi</h4>
                 <div class="cmd-grid">
-                    <button onclick="cambiaTemaSito('cyberpunk')">🤖 Cyberpunk</button>
-                    <button onclick="cambiaTemaSito('neon')">💡 Neon</button>
-                    <button onclick="cambiaTemaSito('foresta')">🌲 Foresta</button>
-                    <button onclick="cambiaTemaSito('tramonto')">🌅 Tramonto</button>
-                    <button onclick="cambiaTemaSito('ghiaccio')">❄️ Ghiaccio</button>
-                    <button onclick="cambiaTemaSito('toxic')">☣️ Toxic</button>
+                    <button onclick="cambiaTemaSito('cyberpunk')">📼 Synthwave</button>
+                    <button onclick="cambiaTemaSito('neon')">🌌 Nebula</button>
+                    <button onclick="cambiaTemaSito('foresta')">🌌 Aurora</button>
+                    <button onclick="cambiaTemaSito('tramonto')">🔥 Inferno</button>
+                    <button onclick="cambiaTemaSito('ghiaccio')">🌨️ Blizzard</button>
+                    <button onclick="cambiaTemaSito('toxic')">☢️ Radioactive</button>
                 </div>
                 <button onclick="resetToDefaultTheme()" style="margin-top: 0.5rem; width: 100%;">🔄 Reset Tema Default</button>
             </div>
